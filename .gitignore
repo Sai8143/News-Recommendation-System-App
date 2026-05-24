@@ -1,0 +1,16 @@
+# Node
+node_modules/
+**/node_modules/
+
+# Python virtual environment
+venv/
+**/venv/
+.env
+
+# Expo
+.expo/
+.expo-shared/
+
+# Build files
+build/
+dist/

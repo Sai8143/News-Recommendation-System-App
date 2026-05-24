@@ -1,0 +1,44 @@
+{
+  "expo": {
+    "name": "TruthLens",
+    "slug": "truthlens-app",
+    "version": "1.0.0",
+    "orientation": "portrait",
+
+    "icon": "./assets/icon.png",
+
+    "userInterfaceStyle": "automatic",
+
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.truthlens.app"
+    },
+
+    "android": {
+      "package": "com.truthlens.app",
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/icon.png",
+        "backgroundColor": "#0f172a"
+      }
+    },
+
+    "web": {
+      "bundler": "metro",
+      "favicon": "./assets/favicon.png"
+    },
+
+    "scheme": "truthlens",
+
+    "plugins": [
+      "expo-router"
+    ],
+
+    "experiments": {
+      "typedRoutes": true
+    }
+  }
+}
