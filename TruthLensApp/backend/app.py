@@ -325,7 +325,22 @@ def batch_analyze():
         results.append({'title': title, 'url': url, 'domain': domain, 'score': final_score, 'verdict': verdict, 'verdictClass': verdict_class})
     return jsonify({'results': results})
 
+# if __name__ == '__main__':
+#     port = int(os.environ.get('PORT', 5000))
+#     print(f"🚀 TruthLens Backend running on http://localhost:{port}")
+#     app.run(debug=True, host='0.0.0.0', port=port)
+
+# Hugging Face / production deployment
 if __name__ == '__main__':
-    port = int(os.environ.get('PORT', 5000))
-    print(f"🚀 TruthLens Backend running on http://localhost:{port}")
-    app.run(debug=True, host='0.0.0.0', port=port)
+    port = int(os.environ.get("PORT", 7860))
+
+    print("=" * 50)
+    print("🚀 TruthLens Backend Started")
+    print(f"Running on port: {port}")
+    print("=" * 50)
+
+    app.run(
+        host="0.0.0.0",
+        port=port,
+        debug=False
+    )
