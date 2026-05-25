@@ -139,6 +139,25 @@ def generate_verdict(score):
 # ═══════════════════════════════════════════
 #  ENDPOINTS
 # ═══════════════════════════════════════════
+# ═══════════════════════════════════════════
+# HOME ROUTE
+# ═══════════════════════════════════════════
+
+@app.route("/", methods=["GET"])
+def home():
+    return jsonify({
+        "message": "TruthLens Backend API is running 🚀",
+        "status": "success",
+        "model_loaded": model is not None,
+        "endpoints": [
+            "/api/health",
+            "/api/analyze",
+            "/api/news/feed",
+            "/api/news/search",
+            "/api/profile",
+            "/api/batch"
+        ]
+    })
 
 @app.route('/api/health', methods=['GET'])
 def health():
@@ -330,6 +349,7 @@ def batch_analyze():
 #     print(f"🚀 TruthLens Backend running on http://localhost:{port}")
 #     app.run(debug=True, host='0.0.0.0', port=port)
 
+# Hugging Face / production deployment
 # Hugging Face / production deployment
 if __name__ == '__main__':
     port = int(os.environ.get("PORT", 7860))
